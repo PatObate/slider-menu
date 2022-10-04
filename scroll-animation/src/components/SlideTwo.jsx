@@ -11,39 +11,19 @@ const SlideTwo = () => {
   const data = [
     {
       id: 1,
-      content: "Human Resources Management System",
+      content: "test",
     },
     {
       id: 2,
-      content: "CRM and Customer Experience",
+      content: "test",
     },
     {
       id: 3,
-      content: "Supply Chain Management",
+      content: "test",
     },
     {
       id: 4,
-      content: "Finance Management",
-    },
-    {
-      id: 5,
-      content: "Business Technology Platform",
-    },
-    {
-      id: 6,
-      content: "Performance Management",
-    },
-    {
-      id: 7,
-      content: "Workflow Automation",
-    },
-    {
-      id: 8,
-      content: "Task and Projects Management",
-    },
-    {
-      id: 9,
-      content: "Spend Management",
+      content: "test",
     },
   ];
 
@@ -118,42 +98,34 @@ const SlideTwo = () => {
   }, []);
 
   return (
-    <div ref={sectionWrap} className="slide-one-section">
-      <h2 className="title">
-        Our Product.
-        <br />
-        Overview.
-      </h2>
-      <div className="slider-wrapper">
-        <div className="nav-container">
-          <ul className="navbar_nav">
-            {data.map((item) => (
-              <li key={item.id} className="nav-item">
-                <a
-                  onClick={scrollNav}
-                  ref={(el) => addToRefs(el, navLinks)}
-                  href={`#slide-one-id-${item.id}`}
-                  className="nav-link "
-                >
-                  {item.content}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="width-container">
-          <div ref={panelsContainer} className="slide-wrap d-flex">
-            {data.map((item) => (
-              <OverviewCard
-                ref={(el) => addToRefs(el, panels)}
-                id={`slide-one-id-${item.id}`}
-                key={item.id}
-              >
-                {item.content}
-              </OverviewCard>
-            ))}
-          </div>
-        </div>
+    <div ref={sectionWrap} className="slide-one-section-2">
+      <ul className="navbar_nav2">
+        {data.map((item) => (
+          <li key={item.id} className="nav-item">
+            <a
+              onClick={scrollNav}
+              ref={(el) => addToRefs(el, navLinks)}
+              href={`#slide-two-id-${item.id}`}
+              className="nav-link "
+            >
+              {item.content}
+            </a>
+          </li>
+        ))}
+      </ul>
+        <div ref={panelsContainer} className="slide-wrap-2 d-flex">
+          {data.map((item) => (
+            <div
+              ref={(el) => addToRefs(el, panels)}
+              id={`slide-two-id-${item.id}`}
+              className="slide-item"
+              key={item.id}
+            >
+              <div class="slide-con d-flex align-items-center justify-content-center h1">
+                {item.id}
+              </div>
+            </div>
+          ))}
       </div>
     </div>
   );
